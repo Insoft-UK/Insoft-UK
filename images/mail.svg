@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 324.60001 217.60001"
+   xml:space="preserve"
+   sodipodi:docname="mail.svg"
+   width="324.60001"
+   height="217.60001"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs4606"><linearGradient
+   id="linearGradient849"
+   inkscape:swatch="solid"><stop
+     style="stop-color:#000000;stop-opacity:1;"
+     offset="0"
+     id="stop847" /></linearGradient>
+	
+	
+<linearGradient
+   inkscape:collect="always"
+   xlink:href="#linearGradient849"
+   id="linearGradient851"
+   x1="0"
+   y1="103.8"
+   x2="314.60001"
+   y2="103.8"
+   gradientUnits="userSpaceOnUse"
+   gradientTransform="translate(5,5)" /></defs><sodipodi:namedview
+   id="namedview4604"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="0.4609375"
+   inkscape:cx="-199.59322"
+   inkscape:cy="79.186441"
+   inkscape:window-width="3366"
+   inkscape:window-height="1376"
+   inkscape:window-x="74"
+   inkscape:window-y="27"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<style
+   type="text/css"
+   id="style4598">
+	.st0{fill:#3498DB;}
+	.st1{fill:#FFFFFF;}
+</style>
+<path
+   id="path168"
+   class="st1"
+   d="M 162.3,133.5 310.3,5 h -296 z m -40,-14 40,32.6 39.1,-32.6 108,93.1 H 14.3 Z M 5,202.4 V 15.3 l 108,93.1 z m 314.6,0 V 15.3 l -108,93.1 z"
+   style="stroke:url(#linearGradient851);stroke-width:10;stroke-dasharray:none;paint-order:normal;stroke-linejoin:round;stroke-linecap:butt" />
+</svg>
