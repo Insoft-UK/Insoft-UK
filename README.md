@@ -13,6 +13,8 @@
 </a>
 <br />
 
+<h4>Prefered Languages</h4>
+C, C++, Objective-C, Objective-C++, Swift.
 
 <h4>GitHub Stats</h4>
 
