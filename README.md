@@ -1,4 +1,4 @@
-<img src="assets/logo.svg" width="85" height="85" /><h1>insoft</h1>
+<img src="assets/logo.svg" width="80" height="80" /><h1>insoft</h1>
 
 <a href="https://github.com/insoft-uk" target="_blank">
   <img style="margin: 0 4px" align="left" alt="GitHub" width="22px" height="22px" src="./images/github.svg?raw=true" />
