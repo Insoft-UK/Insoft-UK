@@ -1,3 +1,4 @@
+<img src="assets/logo.svg" width="60" height="60" />
 ## Hi there 👋
 
 <!--
