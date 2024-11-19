@@ -4,7 +4,7 @@
   <img style="margin: 0 4px" align="left" alt="GitHub" width="22px" height="22px" src="./images/github.svg?raw=true" />
 </a>
 
-<a href="https://insoft.uk" target="_blank">
+<a href="http://insoft.uk" target="_blank">
   <img style="margin: 0 4px" align="left" alt="Website" width="22px" height="22px" src="./images/web.svg?raw=true" />
 </a>
 
