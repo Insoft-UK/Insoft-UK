@@ -6,7 +6,21 @@
         body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
     </style>
 </head>
+<style>
+  .dark-mode-image {
+      content: url('assets/logo.svg');
+        }
+
+        /* Swap image for dark mode */
+        @media (prefers-color-scheme: dark) {
+            .dark-mode-image {
+                content: url('assets/logo-w.svg');
+            }
+        }
+</style>
+
 <body>
+    <img class="dark-mode-image" />
     <h1>Insoft</h1>
     <p>Welcome to my GitHub home page.</p>
     <p><a href="https://github.com/Insoft-UK">Check out my GitHub projects</a></p>
