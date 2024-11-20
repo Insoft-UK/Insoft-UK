@@ -7,5 +7,3 @@
 <br />
 <a href="https://github.com/Insoft-UK"><img align="center" style="margin: 4px 4px 4px 4px" src="https://github-readme-stats.vercel.app/api?username=Insoft-UK&show_icons=true&theme=default&hide_rank=true" alt="Insoft GitHub Stats" /></a>
 <a href="https://github.com/benbaker76"><img align="center" style="margin: 4px 4px 4px 4px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Insoft-UK&show_icons=true&theme=default&layout=compact&hide=html" alt="Insoft GitHub Top Languages" /></a>
-<h4>GitHub Trophies</h4>
-[![trophy](https://github-profile-trophy.vercel.app/?username=Insoft-UK&theme=onedark)](https://github.com/Insoft-UK/github-profile-trophy)
