@@ -1,0 +1,90 @@
+#!/bin/bash
+DIR=$(dirname "$0")
+printf "\e[48;5;160m"
+clear
+ANSI_ART=$(cat <<EOF
+\e[48;5;160m                            \e[0;m
+\e[48;5;160m            \e[0;107m            \e[48;5;160m    \e[0;m
+\e[48;5;160m          \e[0;107m            \e[48;5;160m      \e[0;m
+\e[48;5;160m        \e[0;107m            \e[48;5;160m        \e[0;m
+\e[48;5;160m      \e[0;107m            \e[48;5;160m  \e[0;107m  \e[48;5;160m      \e[0;m
+\e[48;5;160m    \e[0;107m            \e[48;5;160m  \e[0;107m      \e[48;5;160m    \e[0;m
+\e[48;5;160m  \e[0;107m            \e[48;5;160m  \e[0;107m          \e[48;5;160m  \e[0;m
+\e[48;5;160m  \e[0;107m          \e[48;5;160m    \e[0;107m            \e[0;m
+\e[48;5;160m  \e[0;107m            \e[48;5;160m    \e[0;107m          \e[0;m
+\e[48;5;160m    \e[0;107m          \e[48;5;160m  \e[0;107m            \e[0;m
+\e[48;5;160m      \e[0;107m      \e[48;5;160m  \e[0;107m            \e[48;5;160m  \e[0;m
+\e[48;5;160m        \e[0;107m  \e[48;5;160m  \e[0;107m            \e[48;5;160m    \e[0;m
+\e[48;5;160m          \e[0;107m            \e[48;5;160m      \e[0;m
+\e[48;5;160m        \e[0;107m            \e[48;5;160m        \e[0;m
+\e[48;5;160m      \e[0;107m            \e[48;5;160m          \e[0;m
+\e[48;5;160m
+EOF
+)
+
+printf "$ANSI_ART\n"
+
+cd $DIR
+
+# Read version information from a text file (version.txt).
+# Example: "12399" represents v1.2.3 build 99
+version_file="version.txt"
+version=$(cat "$version_file")
+version=$((version + 1))
+echo "$version" > "$version_file"
+
+# Extract Major, Minor, Patch, and Build from the version number
+if [[ ${#version} -eq 5 ]]; then
+    major=$(echo "$version" | cut -c1)           # 1 digit Major version
+    minor=$(echo "$version" | cut -c2)           # Minor version
+    patch=$(echo "$version" | cut -c3)           # Patch version
+    build=$(echo "$version" | cut -c4-5)         # Build number
+elif [[ ${#version} -eq 6 ]]; then
+    major=$(echo "$version" | cut -c1-2)         # 2 digit Major version
+    minor=$(echo "$version" | cut -c3)           # Minor version
+    patch=$(echo "$version" | cut -c4)           # Patch version
+    build=$(echo "$version" | cut -c5-6)         # Build number
+else
+    echo "Invalid version format in version.txt"
+    exit 1
+fi
+
+# Convert major version to a letter (1 = A, 2 = B, ..., 26 = Z, 27 = AA, etc.)
+function convert_major_to_letter() {
+    local num=$1
+    local letter=""
+    while [ $num -gt 0 ]; do
+        remainder=$(( (num - 1) % 26 ))
+        letter=$(printf "\x$(printf %x $((65 + remainder)))")$letter
+        num=$(( (num - 1) / 26 ))
+    done
+    echo "$letter"
+}
+
+major_letter=$(convert_major_to_letter "$major")
+
+# Convert patch version (0 = A, 1 = B, ..., 9 = J)
+declare -a patches=("A" "B" "C" "D" "E" "F" "G" "H" "I" "J")
+patch_letter=${patches[$patch]}
+
+# Get the current date
+year=$(date "+%Y" | tail -c 3)  # Last two digits of the year
+month=$(date "+%m")             # Numeric month
+day=$(date "+%d")               # Numeric day
+
+# Map month to letters (A = Jan, B = Feb, ..., L = Dec)
+declare -a months=("A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L")
+month_letter=${months[$((month-1))]}  # Adjust for 0-based index
+
+# Map day to alphanumeric (0-V, 1 = 0, 2 = 1, ..., 31 = U)
+declare -a days=("0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U")
+day_letter=${days[$((day-1))]}  # Adjust for 0-based index
+
+# Generate the versioning code
+version_code="${major_letter}${minor}${patch_letter}${build}-${year}${month_letter}${day_letter}"
+
+# Output the generated version code
+echo "Version Number: $major.$minor.$patch"
+echo "Numeric Build Number: $version"
+echo "Internal Build Code: ${major_letter}${minor}${patch_letter}${build}"
+echo "Generated Version Code: $version_code"
