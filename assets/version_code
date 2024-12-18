@@ -30,6 +30,8 @@ cd $DIR
 # Example: "12399" represents v1.2.3 build 99
 version_file="version.txt"
 version=$(cat "$version_file")
+
+# Increment version information and update file (version.txt).
 version=$((version + 1))
 echo "$version" > "$version_file"
 
@@ -83,8 +85,37 @@ day_letter=${days[$((day-1))]}  # Adjust for 0-based index
 # Generate the versioning code
 version_code="${major_letter}${minor}${patch_letter}${build}-${year}${month_letter}${day_letter}"
 
-# Output the generated version code
+# Output the generated version code to terminal.
 echo "Version Number: $major.$minor.$patch"
+echo "Version Code: $version_code"
 echo "Numeric Build Number: $version"
 echo "Internal Build Code: ${major_letter}${minor}${patch_letter}${build}"
-echo "Generated Version Code: $version_code"
+
+# Output the generated version code to file.
+echo "// The MIT License (MIT)" > version_code.h
+echo "// " >> version_code.h
+echo "// Copyright (c) 2023 Insoft. All rights reserved." >> version_code.h
+echo "// " >> version_code.h
+echo "// Permission is hereby granted, free of charge, to any person obtaining a copy" >> version_code.h
+echo "// of this software and associated documentation files (the "Software"), to deal" >> version_code.h
+echo "// in the Software without restriction, including without limitation the rights" >> version_code.h
+echo "// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell" >> version_code.h
+echo "// copies of the Software, and to permit persons to whom the Software is" >> version_code.h
+echo "// furnished to do so, subject to the following conditions:" >> version_code.h
+echo "// " >> version_code.h
+echo "// The above copyright notice and this permission notice shall be included in all" >> version_code.h
+echo "// copies or substantial portions of the Software." >> version_code.h
+echo "// " >> version_code.h
+echo "// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR" >> version_code.h
+echo "// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY," >> version_code.h
+echo "// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE" >> version_code.h
+echo "// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER" >> version_code.h
+echo "// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM," >> version_code.h
+echo "// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE" >> version_code.h
+echo "// SOFTWARE." >> version_code.h
+echo "" >> version_code.h
+
+echo "#define VersionNumber         \"$major.$minor.$patch\"" >> version_code.h
+echo "#define VersionCode           \"$version_code\"" >> version_code.h
+echo "#define NumericBuildNumber    $version" >> version_code.h
+echo "#define InternalBuildCode     \"${major_letter}${minor}${patch_letter}${build}\"" >> version_code.h
