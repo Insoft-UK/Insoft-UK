@@ -20,7 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#define VersionNumber         "1.2.3"
-#define VersionCode           "A2D21-24LH"
-#define NumericBuildNumber    12321
-#define InternalBuildCode     "A2D21"
+#define VERSION_NUMBER        "1.2.3"
+#define VERSION_CODE          "A2D22-24LJ"
+#define NUMERIC_BUILD          12322
+#define INTERNAL_BUILD_CODE   "A2D22"
+#define DATE                  "2024 December 20"
+#define YEAR                  "2024"

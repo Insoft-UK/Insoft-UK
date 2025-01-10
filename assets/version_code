@@ -115,7 +115,9 @@ echo "// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 echo "// SOFTWARE." >> version_code.h
 echo "" >> version_code.h
 
-echo "#define VersionNumber         \"$major.$minor.$patch\"" >> version_code.h
-echo "#define VersionCode           \"$version_code\"" >> version_code.h
-echo "#define NumericBuildNumber    $version" >> version_code.h
-echo "#define InternalBuildCode     \"${major_letter}${minor}${patch_letter}${build}\"" >> version_code.h
+echo "#define VERSION_NUMBER        \"$major.$minor.$patch\"" >> version_code.h
+echo "#define VERSION_CODE          \"$version_code\"" >> version_code.h
+echo "#define NUMERIC_BUILD          $version" >> version_code.h
+echo "#define INTERNAL_BUILD_CODE   \"${major_letter}${minor}${patch_letter}${build}\"" >> version_code.h
+echo "#define DATE                  \"$(date +"%Y %B %d")\"" >> version_code.h
+echo "#define YEAR                  \"$(date +"%Y")\"" >> version_code.h
