@@ -21,16 +21,35 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-DIR=$(dirname "$0")
-cd $DIR
-clear
+ANSI_ART=$(cat <<EOF
+          ************
+        ************
+      ************
+    ************  **
+  ************  ******
+************  **********
+**********    ************
+************    **********
+  **********  ************
+    ******  ************
+      **  ************
+        ************
+      ************
+    ************
+EOF
+)
+printf "$ANSI_ART\n"
 
 if [ ! -f "date.txt" ]; then
     echo "Error: No date provided and date.txt not found."
     exit 1
 fi
 
-new_date=$(cat "date.txt")
+if [ -z "$1" ]; then
+    new_date=$(cat "setdate.txt")
+else
+    new_date=$1
+fi
 
 # Validate the date format (YYYY-MM-DD) and convert to touch-compatible format
 if [[ "$(uname)" == "Darwin" ]]; then

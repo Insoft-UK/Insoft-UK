@@ -1,5 +1,4 @@
 #!/bin/bash
-DIR=$(dirname "$0")
 clear
 ANSI_ART=$(cat <<EOF
 \e[0;m          \e[48;5;160m            \e[0;m    \e[0;m
@@ -20,8 +19,6 @@ EOF
 )
 
 printf "$ANSI_ART\n"
-
-cd $DIR
 
 # Read version information from a text file (version.txt).
 # Example: "12399" represents v1.2.3 build 99
