@@ -1,4 +1,4 @@
-<img src="assets/logo.svg" width="80" height="80" />
+<img src="assets/silhouette-logo.svg" width="80" height="80" />
 <h1>insoft</h1>
 <a href="https://github.com/Insoft-UK">
 
